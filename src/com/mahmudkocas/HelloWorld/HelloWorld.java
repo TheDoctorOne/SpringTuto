@@ -1,4 +1,4 @@
-package com.mahmudkocas.tuto;
+package com.mahmudkocas.HelloWorld;
 
 public class HelloWorld {
 	private String message;

@@ -1,4 +1,4 @@
-package com.mahmudkocas.tuto;
+package com.mahmudkocas.HelloWorld;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
