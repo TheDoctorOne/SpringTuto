@@ -11,6 +11,17 @@ public class Main {
 		ctx = new ClassPathXmlApplicationContext("Beans.xml");
 		HelloWorld obj = (HelloWorld) ctx.getBean("helloWorld");
 		obj.getMessage();
+		HelloWorld obj2 = (HelloWorld) ctx.getBean("helloWorld"); //Basicly: obj2 = obj; Becuz at Beans.xml scope declared as "singleton". 
+		//															If we had defined scope as "prototype", objects whould have been different. 
+		obj2.getMessage();
+		obj.setMessage("message");
+		obj2.getMessage(); //Prints "message"
+		System.out.println(obj2 == obj); //true
+		/* More Inf.
+		 * 
+		 * More Information About Beans : https://www.tutorialspoint.com/spring/spring_bean_definition.htm
+		 * 
+		 */
 
 	}
 
