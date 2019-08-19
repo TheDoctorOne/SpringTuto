@@ -1,4 +1,4 @@
-package com.mahmudkocas.HelloWorld;
+package io.TheDoctorOne.HelloWorld;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

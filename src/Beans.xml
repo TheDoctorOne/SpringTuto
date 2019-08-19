@@ -3,19 +3,34 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <bean id = "helloWorld" class = "com.mahmudkocas.HelloWorld.HelloWorld" scope="singleton"><!--Hello World Bean-->
+   <bean id = "helloWorld" class = "io.TheDoctorOne.HelloWorld.HelloWorld" scope="singleton"><!--Hello World Bean-->
       <property name = "message" value = "Hello World!"/>
    </bean>
 
-   <bean id= "exampleInit" class = "com.mahmudkocas.BeanLifeCycle.ExampleInit" init-method = "init" destroy-method= "destroyXML"><!--Life Cycle-->
+   <bean id= "exampleInit" class = "io.TheDoctorOne.BeanLifeCycle.ExampleInit" init-method = "init" destroy-method= "destroyXML"><!--Life Cycle-->
       <property name = "message" value = "Running..." />
    <!--Calls init() method after properties set
    XML way-->
    </bean>
 
-   <bean id= "parent" class= "com.mahmudkocas.innerBeans.Parent"><!--Inner Beans-->
-      <property name= "child">
-         <bean id="child" class= "com.mahmudkocas.innerBeans.Child" />
-      </property>
+   <bean id= "parent" class= "io.TheDoctorOne.innerBeans.Parent"><!--Inner Beans-->
+      <constructor-arg name= "child">  <!--Goes for Constructor-->
+         <bean id="child" class= "io.TheDoctorOne.innerBeans.Child" /><!--Basicly Object Creation-->
+      </constructor-arg>
    </bean>
+
+   <!--Post Processors
+      More Information : 
+      https://www.tutorialspoint.com/spring/spring_bean_post_processors.htm
+   -->
+   <bean id= "parentpp" class= "io.TheDoctorOne.PostProcessors.Parent" destroy-method= "destroy">
+      <constructor-arg name= "child">  <!--Goes for Constructor-->
+         <bean id="childpp" class= "io.TheDoctorOne.PostProcessors.Child" init-method= "init" />
+      </constructor-arg>
+   </bean>
+   <bean class= "io.TheDoctorOne.PostProcessors.PostProcessor" />
+   <!--Also Lists(Collections) can be created with XML
+      More Information:
+      https://www.tutorialspoint.com/spring/spring_injecting_collection.htm
+   -->
 </beans>

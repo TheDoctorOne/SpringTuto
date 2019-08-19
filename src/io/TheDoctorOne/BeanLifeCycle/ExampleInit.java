@@ -1,4 +1,4 @@
-package com.mahmudkocas.BeanLifeCycle;
+package io.TheDoctorOne.BeanLifeCycle;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;

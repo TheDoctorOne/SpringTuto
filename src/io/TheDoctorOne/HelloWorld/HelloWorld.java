@@ -1,4 +1,4 @@
-package com.mahmudkocas.HelloWorld;
+package io.TheDoctorOne.HelloWorld;
 
 public class HelloWorld {
 	private String message;
@@ -9,7 +9,6 @@ public class HelloWorld {
         //Basicly it just calls the method. 
         //Anything can be done inside.
         //this.message = message;
-        System.out.println("Enters.");
         
         //i = Integer.parseInt(this.message);
 		this.message = message;

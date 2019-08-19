@@ -1,4 +1,4 @@
-package com.mahmudkocas.innerBeans;
+package io.TheDoctorOne.innerBeans;
 
 public class Child { 
 

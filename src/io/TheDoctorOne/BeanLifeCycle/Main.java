@@ -1,4 +1,4 @@
-package com.mahmudkocas.BeanLifeCycle;
+package io.TheDoctorOne.BeanLifeCycle;
 
 import javax.swing.JFrame;
 

@@ -1,4 +1,4 @@
-package com.mahmudkocas.innerBeans;
+package io.TheDoctorOne.innerBeans;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
