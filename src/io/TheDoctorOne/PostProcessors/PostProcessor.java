@@ -22,7 +22,7 @@ public class PostProcessor implements BeanPostProcessor {
         } else if (bean instanceof Child) {
 
         } else {
-            System.out.println("[PPBI]Unknown Object : " + bean.toString());
+            System.out.println("[PPAI]Unknown Object : " + bean.toString());
         }
         return bean;
     }
