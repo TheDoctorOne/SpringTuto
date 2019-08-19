@@ -13,8 +13,9 @@ public class Main {
         System.out.println("go");
         ctx = new ClassPathXmlApplicationContext("Beans.xml");
         ExampleInit eInit = (ExampleInit) ctx.getBean("exampleInit");
-        eInit.printMessage();
         ctx.registerShutdownHook();
+        eInit.printMessage();
+        
         /**
          * Software calls Java's methods first compared to XML defined ones.
          */

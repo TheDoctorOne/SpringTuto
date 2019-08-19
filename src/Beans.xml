@@ -4,12 +4,18 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
    <bean id = "helloWorld" class = "com.mahmudkocas.HelloWorld.HelloWorld" scope="singleton"><!--Hello World Bean-->
-      <property name = "message" value = "1"/>
+      <property name = "message" value = "Hello World!"/>
    </bean>
 
-   <bean id= "exampleInit" class = "com.mahmudkocas.BeanLifeCycle.ExampleInit" init-method = "init" destroy-method= "destroyXML">
+   <bean id= "exampleInit" class = "com.mahmudkocas.BeanLifeCycle.ExampleInit" init-method = "init" destroy-method= "destroyXML"><!--Life Cycle-->
       <property name = "message" value = "Running..." />
    <!--Calls init() method after properties set
    XML way-->
+   </bean>
+
+   <bean id= "parent" class= "com.mahmudkocas.innerBeans.Parent"><!--Inner Beans-->
+      <property name= "child">
+         <bean id="child" class= "com.mahmudkocas.innerBeans.Child" />
+      </property>
    </bean>
 </beans>
