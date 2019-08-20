@@ -14,7 +14,10 @@
         <constructor-arg name = "age" value = "22" />
         <constructor-arg name = "gender" value = "Boi" />
     </bean>
-    <bean id = "job" class = "io.TheDoctorOne.Annotions.Job">
+    <bean id = "lumberjack" class = "io.TheDoctorOne.Annotions.Job">
         <constructor-arg name = "name" value = "Lumberjack" />
+    </bean>
+    <bean id = "miner" class = "io.TheDoctorOne.Annotions.Job">
+        <constructor-arg name = "name" value = "Miner" />
     </bean>
 </beans>
