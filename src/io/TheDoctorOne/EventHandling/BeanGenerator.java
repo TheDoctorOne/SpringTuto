@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanGenerator {
     @Bean
     public Hello hello() {
+        System.out.println("Creating bean..."); //We can put things here.
         return new Hello();
     }
 
