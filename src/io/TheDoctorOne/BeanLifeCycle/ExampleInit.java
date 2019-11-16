@@ -20,11 +20,11 @@ public class ExampleInit implements DisposableBean, InitializingBean { //Interfa
         System.out.println("INIT JAVA");
     }
     @Override
-    public void destroy() { //Calls this method when closing software. Java way
+    public void destroy() { //Calls this method when closing software. Java way, garbage collector
         System.out.println("DESTROY JAVA");
     }
 
-    public void destroyXML() { //Calls this method when closing software. XML way, defined at Beans.xml
+    public void destroyXML() { //Calls this method when closing software. XML way, defined at Beans.xml , garbage collector
         System.out.println("DESTROY XML");
     }
     public void init(){ //XML Way of afterPropertiesSet(), which we define at Beans.xml

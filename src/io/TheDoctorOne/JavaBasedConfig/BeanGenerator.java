@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanGenerator { //This class is covering the XML part itself. 
 
     @Bean
-    public Humanoid humanoid() {
+    public Humanoid humanoid() { //And the beans
         return new Humanoid("Mahmut");
     }
 
