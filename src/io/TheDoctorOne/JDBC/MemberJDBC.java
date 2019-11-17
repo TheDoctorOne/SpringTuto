@@ -53,7 +53,7 @@ public class MemberJDBC implements DatabaseAccess<Member> {
     @Override
     public void delete(String id) {
         String SQL = "DELETE FROM Member WHERE id = ?";
-        jdbc.update(SQL);
+        jdbc.update(SQL, id);
         System.out.println("Deleted. id = " + id);
     }
 
