@@ -9,13 +9,18 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class BeanGenerator {
 
     @Bean
-    public JdbcTemplate jdbc () {
+    public JdbcTemplate jdbc() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/");
-        ds.setUsername("root");
-        ds.setPassword("test");
-        return new JdbcTemplate();
+        try {
+            ds.setDriverClassName(Class.forName("com.mysql.jdbc.Driver").getName());
+            ds.setUrl("jdbc:mysql://localhost:3306/test");
+            ds.setUsername("root");
+            ds.setPassword("");
+            return new JdbcTemplate(ds);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found.");
+            return null;
+        }
     }
 
     @Bean

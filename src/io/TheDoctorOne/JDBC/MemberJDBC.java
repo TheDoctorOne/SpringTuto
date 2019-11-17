@@ -17,11 +17,11 @@ public class MemberJDBC implements DatabaseAccess<Member> {
 
     @Override
     public void createTableIfNotExists() {
-        String SQL = "CREATE TABLE Member IF NOT EXISTS(" +
+        String SQL = "CREATE TABLE IF NOT EXISTS Member(" +
             "id INT NOT NULL AUTO_INCREMENT, " +
             "name VARCHAR(32) NOT NULL, " +
-            "age INT NOT NULL" + 
-            "job VARCHAR(32) NOT NULL " + 
+            "age INT NOT NULL, " + 
+            "job VARCHAR(32) NOT NULL, " + 
             "PRIMARY KEY (id) " +
             ");";
         try{
@@ -29,6 +29,7 @@ public class MemberJDBC implements DatabaseAccess<Member> {
             System.out.println("Table Created.");
         } catch (DataAccessException e) {
             System.out.println("Table Exists.");
+            e.printStackTrace();
         }
     }
 
@@ -40,7 +41,7 @@ public class MemberJDBC implements DatabaseAccess<Member> {
         String name = elements[0];
         String age = elements[1];
         String job = elements[2];
-        String SQL = "INSERT IN TO Member(name, age, job) VALUES (?, ?, ?)";
+        String SQL = "INSERT INTO Member(name, age, job) VALUES (?, ?, ?)";
         jdbc.update(SQL, name, age, job);
         System.out.println("New entry added. Name = " + name);
     }

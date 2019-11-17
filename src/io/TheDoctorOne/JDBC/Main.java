@@ -15,7 +15,7 @@ public class Main {
 
     Main () {
         context = new AnnotationConfigApplicationContext(BeanGenerator.class);
-        /*MemberJDBC m = context.getBean(MemberJDBC.class);
+        MemberJDBC m = context.getBean(MemberJDBC.class);
         m.createTableIfNotExists();
         m.insert("Mahmut", "22", "Student");
         m.insert("Test", "12", "Kid");
@@ -23,7 +23,7 @@ public class Main {
         List<Member> list = m.list();
         for(Member member : list) {
             member.toString();
-        }*/
+        }
     }
 
     public static void main(String[] args) {
