@@ -10,27 +10,17 @@ public class BeanGenerator {
 
     @Bean
     public JdbcTemplate jdbc () {
-        return new JdbcTemplate(new DriverManagerDataSource("jdbc:mysql://localhost:3306", "root", "test"));
+        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setDriverClassName("com.mysql.jdbc.Driver");
+        ds.setUrl("jdbc:mysql://localhost:3306/");
+        ds.setUsername("root");
+        ds.setPassword("test");
+        return new JdbcTemplate();
     }
 
     @Bean
-    public String name() {
-        return "TheDoctorOne";
-    }
-
-    @Bean
-    public String age() {
-        return "22";
-    }
-
-    @Bean
-    public String job() {
-        return "Student";
-    }
-
-    @Bean
-    public Member member() {
-        return new Member();
+    public MemberJDBC memberJDBC() {
+        return new MemberJDBC();
     }
 
 }

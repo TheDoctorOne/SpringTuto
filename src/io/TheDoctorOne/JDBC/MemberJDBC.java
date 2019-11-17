@@ -2,10 +2,12 @@ package io.TheDoctorOne.JDBC;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class MemberJDBC implements DatabaseAccess<Member> {
+    @Autowired
     private JdbcTemplate jdbc;
 
     @Override
@@ -30,11 +32,10 @@ public class MemberJDBC implements DatabaseAccess<Member> {
         }
     }
 
-    
-    @Override
     /**
     * @param elements are name, age, job in order
     */
+    @Override
     public void insert(String... elements) throws IndexOutOfBoundsException {
         String name = elements[0];
         String age = elements[1];
@@ -63,11 +64,11 @@ public class MemberJDBC implements DatabaseAccess<Member> {
         return jdbc.query(SQL, new MemberRowMapper());
     }
 
-    @Override
     /**
     * @param id is for member id
     * @param elements is for the name, age, job in order
     */
+    @Override
     public void update(String id, String... elements) throws IndexOutOfBoundsException {
         String name = elements[0];
         String age = elements[1];
