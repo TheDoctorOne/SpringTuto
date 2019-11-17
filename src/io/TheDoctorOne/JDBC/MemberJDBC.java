@@ -26,9 +26,7 @@ public class MemberJDBC implements DatabaseAccess<Member> {
             ");";
         try{
             jdbc.execute(SQL);
-            System.out.println("Table Created.");
         } catch (DataAccessException e) {
-            System.out.println("Table Exists.");
             e.printStackTrace();
         }
     }

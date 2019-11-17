@@ -22,7 +22,8 @@ public class Main {
         m.insert("Relatable", "3", "Beeing Cute");
         List<Member> list = m.list();
         for(Member member : list) {
-            member.toString();
+            System.out.println(member.toString());
+            System.out.println("=============");
         }
     }
 
